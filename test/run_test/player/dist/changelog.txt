@@ -1,0 +1,140 @@
+1.5.2
+
+- Some fixes in playlist generation
+- Player stop now ends play immediately
+- Fixed 0 elements playlist crashing the player threads
+- No more full exception on unable to connect
+- Improved log messages on notifications
+- Deletion of all tracks on stop
+- Security check on files to be played - must exists and be greater than 0
+
+1.5.1
+
+- Some refactorings on job classes
+- Fixed bug of config check job not working
+- More detailed playlist info in log
+- Fixed playlist start error
+
+1.5.0
+
+- Added job for configs reloading if changed
+- Some refactorings on DAO (keys+defaults)
+- Files update job is now optional
+- Defaults inserted for player configuration
+- Added start_from_beginning, fixed playlist generation
+
+1.4.3
+
+- Fixed bug in isPlayTime not correctly evaluating cross-days intervals.
+- Adjusted log verbosity
+- Improved stop of media player
+
+1.4.2
+
+- Fixed bug in usb updates
+
+1.4.1
+
+- Fixed bug in playlist generation
+
+1.4.0
+
+- Completely new architecture, no more using http server
+- Dynamic media player support : omxplayer on RaspberryPi, cvlc otherwise
+
+1.3.3
+
+- Fix deleteOnExit for jar dependencies
+
+1.3.2
+
+- Added cleanup of unused jar libraries
+
+1.2.9
+
+- try fix for deleting root owned update on usb drive
+- reduced the verbosity when not able to connect remotely
+
+1.2.8
+
+- Fixed bug on usb drive update
+
+1.2.7
+
+- Faster playlist generation
+- Delete update file even if owned by root
+- Shutdown if no update is found on newly inserted usb drive
+- Cleanup unused jar files
+
+1.2.6
+
+- Catched generic exception on notification preventing abnormal player termination.
+
+1.2.5
+
+- Added shutdown hook thread for some cleanup
+
+1.2.3
+
+- Fixed path in player_boot.xml search.
+- Fixed log file path
+
+1.2.1
+
+- Improved player_boot.xml search
+
+1.2.0
+
+- Removed blocking exceptions when trying to connect remotely for notifications.
+
+1.1.18
+
+- Removed root running check
+- Fixed bug in usb drive detection throwing NPE
+
+1.1.17
+
+- Switched player usage to more optimized omxplayer
+- Small changes in startup scripts
+
+1.1.16
+
+- Added improved usb drive recognition compatible with 'usbdrive'
+
+1.1.15
+
+- New more stable file-based management
+
+1.1.14
+
+- Cleanup some tmp dirs for safety
+- Fixed print of updated software files
+
+1.1.12
+
+- Added check for new unnotified installed software versions
+
+1.1.11
+
+- Fixed updated scripts as non-executable
+
+1.1.10
+
+- Fixed a bug for restart after software update
+- Added software update file listing inside log
+
+1.1.9
+
+Starting version. Includes all the following features :
+
+- Check, Request, Download and Install diff updates for spots, music and software.
+- Playlists with loop support to cover the desired time span
+- Music player not bound to graphical UI
+- Updates fetched from Usb drive
+- Set Audio mode from remote is supported (Analog and HDMI)
+- Volume set to a default value
+- Improved status listing : version, active services and application threads
+- Application runs only as non-root user
+
+
+

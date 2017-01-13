@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>RegiaPN Player Boot Configuration</comment>
+<entry key="registration_code">12345</entry>
+<entry key="registration_host">radioandbusiness.com</entry>
+<entry key="registration_page">/api/v1_0/notify/register_instance</entry>
+<entry key="registration_protocol">http</entry>
+</properties>

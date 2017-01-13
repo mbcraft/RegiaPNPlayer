@@ -1,0 +1,43 @@
+The following libraries are covered by the Apache License (apache_license_2_0.txt):
+
+lib/commons-coded-1.9.jar
+lib/commons-logging-1.2.jar
+lib/fluent-hc-4.5.1.jar
+lib/httpasyncclient-4.1.jar
+lib/httpasyncclient-cache-4.1.jar
+lib/httpclient-4.5.1.jar
+lib/httpclient-cache-4.5.1.jar
+lib/httpclient-win-4.5.1.jar
+lib/httpcore-4.4.3.jar
+lib/httpmime-4.5.1.jar
+lib/log4j-1.2.16.jar
+lib/slf4j-api-1.6.6.jar
+lib/slf4j-log4j12-1.6.6.jar
+lib/xercesImpl.jar
+lib/xml-apis.jar
+
+XStream library is covered by the xstream license (xstream_license.txt) :
+
+lib/xstream-1.4.7.jar
+
+Quartz Scheduler is covered by the Apache License 2.0 (apache_license_2_0.txt) :
+
+lib/quartz-2.2.1.jar
+lib/quartz-jobs-2.2.1.jar
+
+JUnit is covered by the Eclipse Public License - v 1.0 (eclipse_public_license_1_0.txt) :
+
+lib/junit-4.10.jar
+
+isorelax is covered by the ISO RELAX License (iso_relax_license.txt) :
+
+lib/isorelax.jar
+
+Other libraries are covered by their respective licenses and distributed as part of other libraries.
+
+Other jar files like
+
+lib/MbcraftJCommon.jar
+RegiaPNPlayer.jar
+
+are covered by the MBCRAFT license (mbcraft_license.txt).

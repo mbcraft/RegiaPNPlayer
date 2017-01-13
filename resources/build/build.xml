@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="regiapnplayer" default="all">
+
+
+    <property file="build.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
+    <!--
+    <property name="skip.tests" value="true"/>
+     -->
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="700m"/>
+
+    <patternset id="ignored.files">
+        <exclude name="**/*.hprof/**"/>
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/*.rbc/**"/>
+        <exclude name="**/*.yarb/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/rcs/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.war"/>
+        <include name="*.swc"/>
+        <include name="*.ane"/>
+        <include name="*.apk"/>
+        <include name="*.zip"/>
+        <include name="*.egg"/>
+        <include name="*.jar"/>
+        <include name="*.ear"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <exclude name="**/?*.aj"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.1.7" value="${jdk.home.1.7}/bin"/>
+    <path id="jdk.classpath.1.7">
+        <fileset dir="${jdk.home.1.7}">
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/sunec.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunpkcs11.jar"/>
+            <include name="jre/lib/ext/zipfs.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jfr.jar"/>
+            <include name="jre/lib/jfxrt.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/management-agent.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/resources.jar"/>
+            <include name="jre/lib/rt.jar"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home" value="${jdk.home.1.7}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.1.7}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.1.7"/>
+
+
+    <!-- Project Libraries -->
+
+    <path id="library.commons.classpath">
+        <fileset dir="${basedir}/lib/commons">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <path id="library.http.classpath">
+        <fileset dir="${basedir}/lib/http">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <path id="library.junit_4.classpath">
+        <fileset dir="${basedir}/lib/junit_4">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <path id="library.logging.classpath">
+        <fileset dir="${basedir}/lib/logging">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <path id="library.quartz.classpath">
+        <fileset dir="${basedir}/lib/quartz">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <path id="library.xstream.classpath">
+        <fileset dir="${basedir}/lib/xstream">
+            <patternset refid="library.patterns"/>
+        </fileset>
+    </path>
+
+    <!-- Modules -->
+
+
+    <!-- Module RegiaPNPlayer -->
+
+    <dirname property="module.regiapnplayer.basedir" file="${ant.file}"/>
+
+
+    <property name="module.jdk.home.regiapnplayer" value="${jdk.home.1.7}"/>
+    <property name="module.jdk.bin.regiapnplayer" value="${jdk.bin.1.7}"/>
+    <property name="module.jdk.classpath.regiapnplayer" value="jdk.classpath.1.7"/>
+
+    <property name="compiler.args.regiapnplayer" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+
+    <property name="regiapnplayer.output.dir"
+              value="${module.regiapnplayer.basedir}/build/classes/production/RegiaPNPlayer"/>
+    <property name="regiapnplayer.testoutput.dir"
+              value="${module.regiapnplayer.basedir}/build/classes/test/RegiaPNPlayer"/>
+
+    <path id="regiapnplayer.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="regiapnplayer.module.production.classpath">
+        <path refid="${module.jdk.classpath.regiapnplayer}"/>
+        <path refid="library.commons.classpath"/>
+        <path refid="library.http.classpath"/>
+        <path refid="library.junit_4.classpath"/>
+        <path refid="library.quartz.classpath"/>
+        <path refid="library.xstream.classpath"/>
+        <path refid="library.logging.classpath"/>
+    </path>
+
+    <path id="regiapnplayer.module.production.libraries">
+        <path refid="library.commons.classpath"/>
+        <path refid="library.http.classpath"/>
+        <path refid="library.junit_4.classpath"/>
+        <path refid="library.quartz.classpath"/>
+        <path refid="library.xstream.classpath"/>
+        <path refid="library.logging.classpath"/>
+    </path>
+
+    <path id="regiapnplayer.runtime.production.module.classpath">
+        <pathelement location="${regiapnplayer.output.dir}"/>
+    </path>
+
+    <path id="regiapnplayer.module.classpath">
+        <path refid="${module.jdk.classpath.regiapnplayer}"/>
+        <pathelement location="${regiapnplayer.output.dir}"/>
+        <path refid="library.commons.classpath"/>
+        <path refid="library.http.classpath"/>
+        <path refid="library.junit_4.classpath"/>
+        <path refid="library.quartz.classpath"/>
+        <path refid="library.xstream.classpath"/>
+        <path refid="library.logging.classpath"/>
+    </path>
+
+    <path id="regiapnplayer.runtime.module.classpath">
+        <pathelement location="${regiapnplayer.testoutput.dir}"/>
+        <pathelement location="${regiapnplayer.output.dir}"/>
+        <path refid="library.commons.classpath"/>
+        <path refid="library.http.classpath"/>
+        <path refid="library.junit_4.classpath"/>
+        <path refid="library.quartz.classpath"/>
+        <path refid="library.xstream.classpath"/>
+        <path refid="library.logging.classpath"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.regiapnplayer">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.regiapnplayer">
+        <patternset refid="excluded.from.module.regiapnplayer"/>
+    </patternset>
+
+    <path id="regiapnplayer.module.sourcepath">
+        <dirset dir="${module.regiapnplayer.basedir}">
+            <include name="src"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.regiapnplayer"
+            depends="compile.module.regiapnplayer.production,compile.module.regiapnplayer.tests"
+            description="Compile module RegiaPNPlayer"/>
+
+    <target name="compile.module.regiapnplayer.production"
+            description="Compile module RegiaPNPlayer; production classes">
+        <mkdir dir="${regiapnplayer.output.dir}"/>
+        <javac destdir="${regiapnplayer.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+               memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.regiapnplayer}/javac">
+            <compilerarg line="${compiler.args.regiapnplayer}"/>
+            <bootclasspath refid="regiapnplayer.module.bootclasspath"/>
+            <classpath refid="regiapnplayer.module.production.classpath"/>
+            <src refid="regiapnplayer.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.regiapnplayer"/>
+        </javac>
+
+        <copy todir="${regiapnplayer.output.dir}">
+            <fileset dir="${module.regiapnplayer.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.regiapnplayer.tests" depends="compile.module.regiapnplayer.production"
+            description="compile module RegiaPNPlayer; test classes" unless="skip.tests"/>
+
+    <target name="clean.module.regiapnplayer" description="cleanup module">
+        <delete dir="${regiapnplayer.output.dir}"/>
+        <delete dir="${regiapnplayer.testoutput.dir}"/>
+    </target>
+
+    <target name="init" description="Build initialization">
+        <!-- Perform any build initialization in this target -->
+    </target>
+
+    <target name="clean" depends="clean.module.regiapnplayer" description="cleanup all"/>
+
+    <target name="build.modules" depends="init, clean, compile.module.regiapnplayer" description="build all modules"/>
+
+    <target name="all" depends="build.modules,jar" description="build all"/>
+
+    <target name="jar">
+        <delete dir="dist" />
+        <mkdir dir="dist" />
+        <mkdir dir="dist/lib" />
+        <copy todir="dist/lib" flatten="true">
+            <path refid="library.commons.classpath"/>
+            <path refid="library.http.classpath"/>
+            <path refid="library.junit_4.classpath"/>
+            <path refid="library.quartz.classpath"/>
+            <path refid="library.xstream.classpath"/>
+            <path refid="library.logging.classpath"/>
+        </copy>
+        <copy todir="dist">
+            <fileset dir="resources/text_files" />
+        </copy>
+        <manifestclasspath property="jar.classpath"
+                           jarfile="${regiapnplayer.output.jarfile}">
+            <classpath refid="regiapnplayer.module.production.libraries" />
+        </manifestclasspath>
+        <jar jarfile="${regiapnplayer.output.jarfile}" >
+            <fileset dir="${regiapnplayer.output.dir}"/>
+            <manifest>
+                <attribute name="Built-By" value="MBCRAFT"/>
+                <attribute name="Class-Path" value="${jar.classpath}" />
+                <attribute name="X-COMMENT" value="Manifest file generated with ant." />
+                <attribute name="Main-Class" value="it.mbcraft.regiapn.player.Main"/>
+            </manifest>
+        </jar>
+    </target>
+</project>

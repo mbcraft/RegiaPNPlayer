@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist>
+  <title>Playlist parrucchiera last</title>
+  <last_update>-0001-11-30 00:00:00</last_update>
+  <list>
+    <song>
+      <path>/music/Enya___Amarantine/001___Less_Than_A_Pearl.mp3.sca0</path>
+      <duration>00:03:44.60</duration>
+    </song>
+    <spot>
+      <path>/spot/Leggi_una_rivista.aac.sca0</path>
+      <duration>00:00:17.30</duration>
+    </spot>
+    <song>
+      <path>/music/Enya___Amarantine/005___The_River_Sings.mp3.sca0</path>
+      <duration>00:02:49.64</duration>
+    </song>
+    <spot>
+      <path>/spot/Informaci_di_pruriti_al_collo_e_al_viso.aac.sca0</path>
+      <duration>00:00:22.97</duration>
+    </spot>
+  </list>
+</playlist>

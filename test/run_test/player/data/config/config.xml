@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties
+        SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="time_zone">Europe/Rome</entry>
+    <entry key="play_start_time">01:48</entry>
+    <entry key="play_end_time">00:58</entry>
+    <entry key="play_end_time_day_offset">1</entry>
+    <entry key="check_play_minutes_interval">1</entry>
+    <entry key="files_update_time">05:00</entry>
+    <entry key="loop_playlist">true</entry>
+    <entry key="start_from_beginning">false</entry>
+</properties>
